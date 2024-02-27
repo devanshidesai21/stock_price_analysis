@@ -8,7 +8,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route(rule: '/get_stock_data', methods=['POST'])
+@app.route('/get_stock_data', methods=['POST'])
 def get_stock_data():
     ticker = request.get_json()['ticker']
     data = yf.Ticker(ticker).history(period='1y')
